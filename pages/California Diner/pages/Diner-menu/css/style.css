@@ -1,0 +1,261 @@
+
+body {
+  background-image: url('../img/Diner-menu-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+.navbar {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.button-container {
+  padding: 1rem;
+  border-right: 1px solid transparent;
+  background-color: white;
+  z-index: 100;
+}
+
+.nav-button {
+  width: 2rem;
+  fill: red;
+  cursor: pointer;
+}
+
+.navbar-hidden {
+  font-size: larger;
+  padding: 1rem;
+  position: relative;
+  background-color: white;
+  width: 15rem;
+  height: 100vh;
+  border-left: 1px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.navbar-hidden > a {
+  text-decoration: none;
+  color: red;
+}
+
+.navbar-hidden > a:hover {
+  text-decoration: underline;
+}
+
+.avatar {
+  width: 10rem;
+}
+
+.turned-off {
+  left: -15rem;
+}
+
+.turn-on {
+  animation: on 1s 1;
+  left: 0;
+}
+
+@keyframes on {
+  0% {
+    left: -15rem;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+.turn-off {
+  animation: off 1s 1;
+  left: -15rem;
+}
+
+@keyframes off {
+  from {
+    left: 0;
+  }
+  to {
+    left: -15rem;
+  }
+}
+
+
+
+.hint {
+  margin-top: 5rem;
+  color: yellow;
+}
+  
+:root{
+  --rotate-A: 0deg;
+  --rotate-B: 0deg;  
+  --rotate-C: 0deg;
+  --rotate-D: 0deg;
+  --rotate-E: 0deg;
+  --rotate-F: 0deg;
+  --rotate-G: 0deg;  
+  --rotate-H: 0deg;
+  --rotate-I: 0deg;
+  --rotate-J: 0deg;
+  --rotate-K: 0deg;
+  --rotate-L: 0deg;
+  --rotate-M: 0deg;
+  --translate: 50%;
+  --z-index-A: 120;
+  --z-index-B: 110;  
+  --z-index-C: 100;
+  --z-index-D: 90;
+  --z-index-E: 80;
+  --z-index-F: 70;
+  --z-index-G: 60;  
+  --z-index-H: 50;
+  --z-index-I: 40;
+  --z-index-J: 30;
+  --z-index-K: 20;
+  --z-index-L: 10;
+  --z-index-M: 1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.book-container {
+  min-height: 90vh;
+  width: 100%;
+  margin-left: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.book {
+  position: relative;
+  width: min(100vw, 1000px);
+  height: min(60vw, 700px);
+  perspective: min(300vw, 3000px);
+  margin-top: 5rem;
+}
+
+.page-container{
+  position: absolute;
+  height: inherit;
+  width: min(50vw, 500px);
+  cursor: pointer;
+  transition: .5s transform ease-in-out;
+  transform-style: preserve-3d;
+  transform-origin: left;  
+}
+
+.page-A{
+  transform: translate(var(--translate)) rotateY(var(--rotate-A));
+  z-index: var(--z-index-A);
+}
+
+.page-B{  
+  transform: translate(var(--translate)) rotateY(var(--rotate-B));
+  z-index: var(--z-index-B);
+}
+
+.page-C{  
+  transform: translate(var(--translate)) rotateY(var(--rotate-C));
+  z-index: var(--z-index-C);
+}
+
+.page-D{  
+  transform: translate(var(--translate)) rotateY(var(--rotate-D));
+  z-index: var(--z-index-D);
+}
+
+.page-E{  
+  transform: translate(var(--translate)) rotateY(var(--rotate-E));
+  z-index: var(--z-index-E);
+}
+.page-F{
+  transform: translate(var(--translate)) rotateY(var(--rotate-F));
+  z-index: var(--z-index-F);
+}
+
+.page-G{  
+  transform: translate(var(--translate)) rotateY(var(--rotate-G));
+  z-index: var(--z-index-G);
+  }
+  
+.page-H{  
+  transform: translate(var(--translate)) rotateY(var(--rotate-H));
+  z-index: var(--z-index-H);
+}
+
+.page-I{  
+  transform: translate(var(--translate)) rotateY(var(--rotate-I));
+  z-index: var(--z-index-I);
+}
+
+.page-J{  
+  transform: translate(var(--translate)) rotateY(var(--rotate-J));
+    z-index: var(--z-index-J);
+}
+
+ .page-K{  
+  transform: translate(var(--translate)) rotateY(var(--rotate-K));
+  z-index: var(--z-index-K);
+}
+
+.page-L{  
+  transform: translate(var(--translate)) rotateY(var(--rotate-L));
+  z-index: var(--z-index-L);
+}
+
+.page-M{  
+  transform: translate(var(--translate)) rotateY(var(--rotate-M));
+  z-index: var(--z-index-M);
+}
+
+.page{
+  position: absolute;
+  backface-visibility: hidden;
+  height: inherit;
+    width: inherit;
+}
+  
+.back{
+  transform: rotateY(180deg);
+}
+
+.ast-page {
+filter: blur(10px);
+filter: brightness(80%);
+}
+
+.adaptive {
+  display: none;
+}
+
+@media (max-width:1200px) {
+  .book-container {
+  display: none;
+  }
+  body {
+    background-image: none;
+  }
+
+.adaptive {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  
+.adaptive-img {
+    height: 100vh;
+    margin-left: 4rem;
+  }
+}

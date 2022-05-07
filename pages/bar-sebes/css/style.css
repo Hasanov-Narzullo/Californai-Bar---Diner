@@ -1,0 +1,98 @@
+
+body {
+    overflow-x: hidden;
+    width: 100vw;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.bar-sebes {
+    display: flex;
+    flex-direction: column;
+    max-width: 560px;
+    margin: auto;
+}
+
+
+.navbar {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.button-container {
+  padding: 1rem;
+  border-right: 1px solid transparent;
+  background-color: dimgray;
+  z-index: 100;
+}
+
+.nav-button {
+  width: 2rem;
+  fill: red;
+  cursor: pointer;
+}
+
+.navbar-hidden {
+  font-size: larger;
+  padding: 1rem;
+  position: relative;
+  background-color: dimgray;
+  width: 15rem;
+  height: 100vh;
+  border-left: 1px solid ;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.navbar-hidden > a {
+  text-decoration: none;
+  color: red;
+}
+
+.navbar-hidden > a:hover {
+  text-decoration: underline;
+
+}
+
+.logo {
+  width: 10rem;
+}
+
+.turned-off {
+  left: -15rem;
+}
+
+.turn-on {
+  animation: on 1s 1;
+  left: 0;
+}
+
+@keyframes on {
+  0% {
+    left: -15rem;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+.turn-off {
+  animation: off 1s 1;
+  left: -15rem;
+}
+
+@keyframes off {
+  from {
+    left: 0;
+  }
+  to {
+    left: -15rem;
+  }
+}
